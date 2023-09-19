@@ -26,8 +26,7 @@ function renderTodoList(){
     " class="delete-todo-button">Delete</button>
     `;
     todoListHTML += html;
-  }
-  
+  }  
   
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 

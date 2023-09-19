@@ -47,13 +47,13 @@
     let intervalId;
 
     function autoPlay(){
-      if(!isAutoPlaying){
+      if(!isAutoPlaying){  //isAutoPlaying = false
         intervalId = setInterval(function(){
           const playerMove = pickComputerMove();
           playGame(playerMove);
         }, 1000);
         isAutoPlaying = true;
-      } else{
+      } else{       //isAutoPlaying = true
         clearInterval(intervalId);
         isAutoPlaying = false;
       }
