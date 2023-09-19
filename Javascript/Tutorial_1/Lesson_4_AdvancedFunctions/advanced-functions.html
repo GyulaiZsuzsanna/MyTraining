@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  
+  <script>
+    /*//Functions = Values
+    function greeting(){
+      console.log('Hello');
+    }
+    greeting(); // Hoisting, we can call before! No order
+
+    const num = 2;
+    const function1 = function greeting(){
+      console.log('Hello2');
+    };
+    const function2 = function (){
+      console.log('Hello2'); //Exept this, there is no hoisting
+    };
+
+    console.log(function1);
+    console.log(typeof function1);
+    function1(); //We can call it
+
+
+    const object1 = {
+      num: 2,
+      fun: function greeting(){ //Function inside the object = Method
+        console.log('hello3');
+      }
+    }
+    object1.fun();
+
+    //
+    function display(param){
+      console.log(param);
+    }
+    display(2);
+
+    //
+    function run(param){
+
+    }
+    run(function(){
+      console.log('Hello4');
+    });  //Funtion as parameter, Passing a fanction into => CALLBACK FUNCTIONS
+    */
+
+    //SET TIMEOUT , Asynchronous Coding
+
+    setTimeout(function(){
+      console.log('TIMEOUT');
+    }, 3000);
+
+    console.log('next line');
+
+    // setInterval(function(){
+    //   console.log('interval');
+    // }, 3000);   //It will be repeated in 3000 sec
+
+  </script>
+</body>
+</html>
