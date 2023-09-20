@@ -11,22 +11,20 @@ renderTodoList();
 function renderTodoList(){
   let todoListHTML = '';
 
-  for(let i=0; i<todoList.length; i++){
-    const todoObject = todoList[i];
-    //const name = todoObject.name;
-    //const dueDate = todoObject.dueDate;
-    const {name, dueDate}  = todoObject; //Shortcode: for the prev. two. 
+  todoList.forEach(function(todoObject, index){
+
+    const {name, dueDate}  = todoObject; //const name = todoObject.name;
 
     const html = `
     <div>${name}</div>
     <div>${dueDate} </div>
     <button onclick="
-    todoList.splice(${i}, 1);
+    todoList.splice(${index}, 1);
       renderTodoList();
     " class="delete-todo-button">Delete</button>
     `;
     todoListHTML += html;
-  }  
+  });
   
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 
@@ -42,7 +40,7 @@ function addTodo(){
   const dueDate = dateInputElement.value;
 
   todoList.push({
-    //name: name,
+    //name: name,  // todolist has 2 objects. Each has name , dueDate
     //dueDate: dueDate,
     name,
     dueDate // Shorthand:   variable and property name are the same!

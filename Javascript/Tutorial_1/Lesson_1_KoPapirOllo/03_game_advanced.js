@@ -48,7 +48,7 @@
 
     function autoPlay(){
       if(!isAutoPlaying){  //isAutoPlaying = false
-        intervalId = setInterval(function(){
+        intervalId = setInterval(() => {
           const playerMove = pickComputerMove();
           playGame(playerMove);
         }, 1000);
@@ -58,6 +58,11 @@
         isAutoPlaying = false;
       }
     }
+
+    // With EventListener: 
+    document.querySelector('.js-rock-button').addEventListener('click', () => {
+      playGame('rock');
+    } );
 
     function playGame(playerMove){
       const computerMove = pickComputerMove(); //Returned value from the function 

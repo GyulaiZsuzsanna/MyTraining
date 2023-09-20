@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 4</title>
+  <style></style>
+</head>
+<body>
+  <input type="text" placeholder="add toDo" class="js-todo-input">
+  <input type="date" class="js-date-input">
+  <button class="js-add-button" onclick="addToDo()">Add toDo</button>
+  <div class="js-todo-list"></div>
+
+  <script>
+  let toDoList = JSON.parse(localStorage.getItem('toDoList'))
+  || [
+    {
+      name:'wash up the dishes',
+      dueDate: '2023-10-11'
+    },
+    {
+      name:'hand the washing out to dry',
+      dueDate: '2023-10-12'
+    }
+  ];
+
+  renderTodoList();
+
+  function addToDo(){
+    const inputElement = document.querySelector('.js-todo-input');
+    const todo = inputElement.value;
+    const dueDate = document.querySelector('.js-date-input').value;
+
+    toDoList.push({
+      name:todo,
+      dueDate:dueDate
+    });
+
+    inputElement.value = '';
+
+    localStorage.setItem('toDoList', JSON.stringify(toDoList));
+
+    renderTodoList();
+  }
+
+  function renderTodoList(){
+
+    let divHtml = '';
+
+    toDoList.forEach((todoObject, index) => {
+      const name = todoObject.name;
+      const dueDate = todoObject.dueDate;
+
+      const pHtml = ` <div>${name}</div>
+    <div>${dueDate} </div>
+    <button onclick="
+    toDoList.splice(${index}, 1);
+      renderTodoList();
+      localStorage.removeItem('toDoList');
+    ">Delete</button>`;
+
+      divHtml += pHtml;
+    });
+
+    document.querySelector('.js-todo-list').innerHTML = divHtml;
+  }
+
+
+  </script>
+</body>
+</html>

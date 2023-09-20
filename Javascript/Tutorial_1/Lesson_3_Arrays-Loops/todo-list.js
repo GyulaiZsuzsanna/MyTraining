@@ -15,7 +15,7 @@ function renderTodoList(){
     const todoObject = todoList[i];
     //const name = todoObject.name;
     //const dueDate = todoObject.dueDate;
-    const {name, dueDate}  = todoObject; //Shortcode: for the prev. two. 
+    const {name, dueDate}  = todoObject; //Shortcode: for the prev. two. (name=name, dueDate = Duedate)
 
     const html = `
     <div>${name}</div>
