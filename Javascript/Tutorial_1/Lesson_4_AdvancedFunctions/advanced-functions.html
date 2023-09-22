@@ -11,25 +11,25 @@
   
   <script>
 
-    const buttonElement = document.querySelector('.js-button');
+    //const buttonElement = document.querySelector('.js-button');
 
     // EVENTLISTENER  , Can be add  multiple at once
 
-    buttonElement.addEventListener('click', () => {
-      console.log('Click');
-    });
+    // buttonElement.addEventListener('click', () => {
+    //   console.log('Click');
+    // });
     
     // To remove EvenListener
-    const eventListener = () => {
-      console.log('Click 1');
-    }; 
+    // const eventListener = () => {
+    //   console.log('Click 1');
+    // }; 
 
-    buttonElement.addEventListener('click', eventListener);
-    buttonElement.removeEventListener('click', eventListener);
+    // buttonElement.addEventListener('click', eventListener);
+    // buttonElement.removeEventListener('click', eventListener);
 
-    buttonElement.addEventListener('click', () => {
-      console.log('Click2');
-    });
+    // buttonElement.addEventListener('click', () => {
+    //   console.log('Click2');
+    // });
 
 
     /*//Functions = Values
@@ -99,20 +99,46 @@
     //   console.log(value);
     // });
 
-    [
-      'make dinner',
-      'wash dishes',
-      'watch youtube'
-    ].forEach(value, index => {
+    // [
+    //   'make dinner',
+    //   'wash dishes',
+    //   'watch youtube'
+    // ].forEach(value, index => {
 
-      if(value === 'wash dishes'){
-        return; // = CONTINUE in for loop
-      }
+    //   if(value === 'wash dishes'){
+    //     return; // = CONTINUE in for loop
+    //   }
 
-      console.log(index);
-      console.log(value);
+    //   console.log(index);
+    //   console.log(value);
+    // });
+
+
+    // Filter
+
+    [1,-3,5].filter((value,index) => {
+      // Filter create a new array , forEach alter the original ! 
+
+      /*if(value >= 0){
+        return true;
+      } else{
+        return false;  // Only the positiv ones will be selected
+      } */
+
+      return value >= 0
     });
 
+    // Map
+
+    [1,1,3].map((value, index) => {
+      // Creates a new array too
+      return value + 10;
+    });
+
+    //Shortcut:
+    [1,1,3].map(value => value + 10 );  //One line = RETURN  automatically
+
+    //Closure
 
 
     //Arrow Functions  ! Normall Function can be HOSTED

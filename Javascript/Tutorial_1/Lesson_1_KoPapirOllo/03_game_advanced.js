@@ -64,6 +64,19 @@
       playGame('rock');
     } );
 
+
+    // Game with addEventListener
+    // document.body.addEventListener('keydown', (event)  => {
+    //   //console.log(event.key);  // Event keeps the key we pressed. 
+    //   if(event.key === 'r') {
+    //     playGame('rock');
+    //   } else if (event.key === 'p'){
+    //     playGame('paper');
+    //   } else if(event.key === 's'){
+    //     playGame('scissors');
+    //   }
+    // });
+
     function playGame(playerMove){
       const computerMove = pickComputerMove(); //Returned value from the function 
       let result = '';
